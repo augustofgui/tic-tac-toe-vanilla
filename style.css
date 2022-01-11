@@ -1,0 +1,188 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.disable-select {
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #3B4252;
+    color: #ECEFF4;
+    font-family: 'Lato', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    max-width: 600px;
+    max-height: 600px;
+
+    padding: 1.5rem;
+}
+
+.game-table {
+    display: grid;
+    grid: repeat(3, 60px) / auto-flow 60px;
+    gap: 0.4rem;
+    background-color: #8FBCBB;
+}
+
+.game-cell { 
+    font-family: 'Fredoka One', 'Lato', sans;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: #3B4252;
+
+    color: #434C5E;
+
+    font-size: 3.5rem;
+    
+    cursor: pointer;
+}
+
+.game-score {
+    font-family: 'Lato', sans;
+    font-weight: 500;
+    font-size: 1.4rem;
+
+    padding: 2.4rem 0 1rem;
+    text-align: center;
+}
+
+.game-menu {
+    font-display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.menu-players {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.menu-players button {
+    padding: 0.3rem 1rem;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+
+    color: #ECEFF4; 
+}
+
+#score-X {
+    color: #BF616A;
+}
+
+#score-O {
+    color: #EBCB8B;
+}
+
+.player-1 {
+    background-color: #BF616A;
+}
+
+.player-2 {
+    background-color: #EBCB8B;
+}
+
+.clicked {
+    cursor: default;
+
+    color: #ECEFF4;
+}
+
+.player-1-win {
+    color: #BF616A;
+}
+
+.player-2-win {
+    color: #EBCB8B;
+}
