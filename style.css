@@ -87,6 +87,8 @@ html {
 }
 
 body {
+    max-height: 100vh;
+
     background-color: #3B4252;
     color: #ECEFF4;
     font-family: 'Lato', sans-serif;
@@ -123,7 +125,7 @@ h3 {
 .game-table {
     display: grid;
     grid: repeat(3, 6.5rem) / auto-flow 6.5rem;
-    gap: 0.4rem;
+    gap: 0.3rem;
     background-color: #8FBCBB;
 }
 
@@ -206,4 +208,11 @@ h3 {
 
 .player-2-win {
     color: #EBCB8B;
+}
+
+@media (max-width: 600px)
+{
+  html {
+      font-size: 80%;
+  }
 }
