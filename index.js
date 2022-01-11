@@ -1,16 +1,29 @@
 const cellClass = 'game-cell';
 
 const gameCells = document.getElementsByClassName(cellClass);
+const restartButton = document.getElementById('restart');
 const playerOneScore = document.getElementById('score-X');
 const playerTwoScore = document.getElementById('score-O');
 
-let gameTable = Array(9).fill(".");
+let gameTable;
+let playerOne;
 
-let playerOne = true;
+restartButton.onclick = startGame;
 
-for (let i = 0; i < gameCells.length; i++ ) {
-    gameCells[i].textContent = '.';
-    gameCells[i].onclick = registerClicker;
+startGame();
+
+function startGame () {
+    gameTable = Array(9).fill(".");
+
+    playerOne = true;
+
+    for (let i = 0; i < gameCells.length; i++ ) {
+        gameCells[i].textContent = '.';
+        gameCells[i].classList.remove('clicked');
+        gameCells[i].classList.remove('player-1-win');
+        gameCells[i].classList.remove('player-2-win');
+        gameCells[i].onclick = registerClicker;
+    }
 }
 
 function restoreGameTable () {
@@ -37,7 +50,8 @@ function changeGameState ({ win, winType, firstIndex }) {
     
     for (let i = 0; i < gameCells.length; i++ ) {
         gameCells[i].onclick = null;
-        gameCells[i].classList.add('clicked');
+        if(gameCells[i] === '.')
+            gameCells[i].classList.add('clicked');
     }
 
     showWinnerCells(winType, firstIndex);
